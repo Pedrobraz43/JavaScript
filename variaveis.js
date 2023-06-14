@@ -8,6 +8,8 @@ Variáveis
 
 */
 
+
+
 const numeroDefuncionariosDaEmpresa = 25
 
 console.log(numeroDefuncionariosDaEmpresa)
