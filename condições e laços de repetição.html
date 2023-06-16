@@ -1,0 +1,29 @@
+<!--
+atraves de variaveis atraves do scrips vemos uma lista de items em JavaScript
+-->
+<html>
+
+<body>
+    <h1>Teste Condições e laços de repetição</h1>
+    <script>
+        let lista = [];
+        let novoItem = prompt(
+            "Digite o nome do item ou - se não quiser adicionar"
+        );
+        while (novoItem != "-") {
+            lista.push(novoItem);
+            novoItem = prompt("Digite o nome do item ou - se não quiser adicionar");
+        }
+        if (lista.length == 0) {
+            alert("A lista está vazia!");
+        } else {
+            alert("você deve comprar estes itens:");
+            for (let i = 0; i < lista.length; i++) {
+                alert(lista[i]);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

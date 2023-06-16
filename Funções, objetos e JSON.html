@@ -1,0 +1,38 @@
+<html>
+
+<body>
+    <h1>Fuções, objetos e JSON</h1>
+    <script>
+        /*JavaScript Object Notation, O que o JSON faz?
+    O JSON é um formato que armazena informações estruturadas e 
+    é principalmente usado para transferir dados entre um servidor e um cliente. O arquivo é basicamente uma alternativa simples e mais leve ao XML (Extensive Markup Language), que tem funções
+         */
+        function buscarCEP() {
+            let cep = prompt("qual CEP deseja buscar?");
+            let url = "https://brasilapi.com.br/api/cep/v2/" + cep;
+
+            fetch(url)
+                .then(function (resposta) {
+                    resposta.json().then(function (dados) {
+                        console.log(dados);
+                        alert(
+                        "sua cidade é " + 
+                        dados.city + 
+                        "no bairro" + 
+                        dados.neighborhood + 
+                        "na rua" + 
+                        dados.street
+                        );
+                    });
+                })
+                .catch(function (erro) {
+                    console.log("Ocorreu um erro ao buscar os dados", erro);
+
+                });
+
+        }
+        buscarCEP();
+    </script>
+</body>
+
+</html>
